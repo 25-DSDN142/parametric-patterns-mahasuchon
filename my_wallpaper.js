@@ -15,7 +15,7 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
 }
-
+//temp
 function wallpaper_background() {
   background(240, 255, 240); //light honeydew green colour
 }
