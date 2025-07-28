@@ -1,75 +1,68 @@
 //your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 60;
-let gradiant = 150;
 
-
+let scaleVar = 200 //default 200
+let temp = 1;
+let rng = 0;
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
-
-  rectMode(CENTER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 200;
-  pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 50;
-}
-//temp
-function wallpaper_background() {
-  background(0,0,0); //light honeydew green colour
+  pWallpaper.grid_settings.cell_width  = scaleVar;
+  pWallpaper.grid_settings.cell_height = scaleVar;
+  pWallpaper.grid_settings.row_offset  = 100;
 
+  //misc settings
+  rectMode(CENTER);
+  ellipseMode(CENTER)
+}
+
+function wallpaper_background() {
+  background(255,255,255);  
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  temp();
-  shadow(gradiant);
-  shadow2(gradiant);
-  shadow3(gradiant);
-  shadow4(gradiant);
-  shadow5(gradiant);
-}
+  /*if (temp < 255) {
+    temp = temp + 3
+  }
+  else {
+    temp = 0
+  }
 
-function temp() {
+  fill(240,50,temp);
+  rect(scaleVar/2, scaleVar/2, scaleVar*0.98, scaleVar*0.98);*/
+
   strokeWeight(0);
-  fill(255,255,0);
-  rect(100 ,100, rect_width*2, rect_height);
-}
+  
+  fill(0,0,0)
+  rect(scaleVar/2,scaleVar/2,scaleVar*0.5,scaleVar*0.5) //base 
 
-function shadow(y) {
-  strokeWeight(0)
-  fill(255,255,0,(y*2))
-  rect(100,y,y*0.7,(rect_height/2))
-}
+  fill(100,100,100,230); 
+  rect(scaleVar/2, scaleVar/4, scaleVar, scaleVar/2); //top rect
 
-function shadow2(y) {
-  y = y*0.8
-  strokeWeight(0)
-  fill(255,255,0,(y*2))
-  rect(100,y,y*0.7,(rect_height/2))
-}
+  fill(100,100,100,100);
+  rect(scaleVar/2, (scaleVar/4)*3, scaleVar, scaleVar/2);//bottom rect
 
-function shadow3(y) {
-  y = y*0.6
-  strokeWeight(0)
-  fill(255,255,0,(y*2))
-  rect(100,y,y*0.7,(rect_height/2))
-}
+  fill(100,100,100,100);
+  rect(scaleVar/4, scaleVar/2, scaleVar/2, scaleVar);// left rect
 
-function shadow4(y) {
-  y = y*0.4
-  strokeWeight(0)
-  fill(255,255,0,(y*2))
-  rect(100,y,y*0.7,(rect_height/2))
-}
+  fill(100,100,100,200);  
+  rect((scaleVar/4)*3, scaleVar/2, scaleVar/2, scaleVar);//right rect
 
-function shadow5(y) {
-  y = y*0.2
-  strokeWeight(0)
-  fill(255,255,0,(y*2))
-  rect(100,y,y*0.7,(rect_height/2))
+
+  fill(200,200,200, 80);
+  rect(scaleVar/8, scaleVar/4, scaleVar/4, scaleVar/2);//top left rect
+
+  fill(50,50,50, 80);
+  rect((scaleVar/8)*7, scaleVar/4, scaleVar/4, scaleVar/2);//top right rect
+
+  fill(50,50,50,80);
+  rect(scaleVar/8, (scaleVar/4)*3, scaleVar/4, scaleVar/2);//bottom left rect
+
+  fill(200,200,200,80);
+  rect((scaleVar/8)*7, (scaleVar/4)*3, scaleVar/4, scaleVar/2);//bottom left rect
 }
