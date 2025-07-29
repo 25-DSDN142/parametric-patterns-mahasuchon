@@ -36,11 +36,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   fill(240,50,temp);
   rect(scaleVar/2, scaleVar/2, scaleVar*0.98, scaleVar*0.98);*/
 
-  strokeWeight(0);
+
+   strokeWeight(0);
 
   fill(0,0,0);
-  rect(scaleVar/2,scaleVar/2,scaleVar*1,scaleVar); //base 
-  
+  rect(scaleVar/2,scaleVar/2,scaleVar*0.9,scaleVar*0.9); //base 
+  /* 
   fill(99, 0, 191);
   rect(scaleVar/2,scaleVar/2,scaleVar*1,scaleVar*0.5); //base 
 
@@ -69,13 +70,17 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   fill(209, 0, 195,80);
   rect((scaleVar/8)*7, (scaleVar/4)*3, scaleVar/4, scaleVar/2);//bottom right rect
 
-  strokeWeight(1)
-  fill(0,0,0)
-  color(255,255,255)
+  */
+
+  strokeWeight(5);
+  fill(0,0,0);
+  color(255,255,255);
   beginShape();
     vertex(scaleVar/2,0)
     vertex(scaleVar/4,0)
     vertex((scaleVar/4)*3,scaleVar)
     vertex(scaleVar,scaleVar)
   endShape(CLOSE);
+
+
 }
