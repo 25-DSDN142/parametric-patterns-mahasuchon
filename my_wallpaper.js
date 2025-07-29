@@ -53,19 +53,29 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   fill(160, 0, 209,100);
   rect(scaleVar/4, scaleVar/2, scaleVar/2, scaleVar);// left rect
 
-  fill(191, 0, 166,150);  
+  fill(174, 0, 209,150);  
   rect((scaleVar/4)*3, scaleVar/2, scaleVar/2, scaleVar);//right rect
 
 
   fill(108, 0, 209, 80);
   rect(scaleVar/8, scaleVar/4, scaleVar/4, scaleVar/2);//top left rect
 
-  fill(50,50,50, 80);
+  fill(157, 0, 209, 80);
   rect((scaleVar/8)*7, scaleVar/4, scaleVar/4, scaleVar/2);//top right rect
 
-  fill(50,50,50,80);
+  fill(164, 0, 209,80);
   rect(scaleVar/8, (scaleVar/4)*3, scaleVar/4, scaleVar/2);//bottom left rect
 
-  fill(200,200,200,80);
-  rect((scaleVar/8)*7, (scaleVar/4)*3, scaleVar/4, scaleVar/2);//bottom left rect
+  fill(209, 0, 195,80);
+  rect((scaleVar/8)*7, (scaleVar/4)*3, scaleVar/4, scaleVar/2);//bottom right rect
+
+  strokeWeight(1)
+  fill(0,0,0)
+  color(255,255,255)
+  beginShape();
+    vertex(scaleVar/2,0)
+    vertex(scaleVar/4,0)
+    vertex((scaleVar/4)*3,scaleVar)
+    vertex(scaleVar,scaleVar)
+  endShape(CLOSE);
 }
