@@ -37,24 +37,27 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   rect(scaleVar/2, scaleVar/2, scaleVar*0.98, scaleVar*0.98);*/
 
   strokeWeight(0);
-  
-  fill(0,0,0)
-  rect(scaleVar/2,scaleVar/2,scaleVar*0.5,scaleVar*0.5) //base 
 
-  fill(100,100,100,230); 
+  fill(0,0,0);
+  rect(scaleVar/2,scaleVar/2,scaleVar*1,scaleVar); //base 
+  
+  fill(99, 0, 191);
+  rect(scaleVar/2,scaleVar/2,scaleVar*1,scaleVar*0.5); //base 
+
+  fill(125, 0, 209,150); 
   rect(scaleVar/2, scaleVar/4, scaleVar, scaleVar/2); //top rect
 
-  fill(100,100,100,100);
+  fill(181, 0, 209,150);
   rect(scaleVar/2, (scaleVar/4)*3, scaleVar, scaleVar/2);//bottom rect
 
-  fill(100,100,100,100);
+  fill(160, 0, 209,100);
   rect(scaleVar/4, scaleVar/2, scaleVar/2, scaleVar);// left rect
 
-  fill(100,100,100,200);  
+  fill(191, 0, 166,150);  
   rect((scaleVar/4)*3, scaleVar/2, scaleVar/2, scaleVar);//right rect
 
 
-  fill(200,200,200, 80);
+  fill(108, 0, 209, 80);
   rect(scaleVar/8, scaleVar/4, scaleVar/4, scaleVar/2);//top left rect
 
   fill(50,50,50, 80);
