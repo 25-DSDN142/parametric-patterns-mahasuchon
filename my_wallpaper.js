@@ -42,6 +42,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   fill(0,0,0);
   rect(scaleVar/2,scaleVar/2,scaleVar*borderSize,scaleVar*borderSize); //base 
+  temp1();
+  slope();
 
 }
 
@@ -89,22 +91,26 @@ rect((scaleVar/8)*7, (scaleVar/4)*3, scaleVar/4, scaleVar/2);//bottom right rect
 
 */
 
-strokeWeight(0);
-fill(0,0,0);
-color(255,255,255);
-beginShape();
-  vertex(scaleVar/2,0)
-  vertex(scaleVar/4,0)
-  vertex((scaleVar/4)*3,scaleVar)
-  vertex(scaleVar,scaleVar)
-endShape(CLOSE);
+function temp1 (){
+  strokeWeight(0);
+  fill(0,0,0);
+  color(255,255,255);
+  beginShape();
+    vertex(scaleVar/2,0)
+    vertex(scaleVar/4,0)
+    vertex((scaleVar/4)*3,scaleVar)
+    vertex(scaleVar,scaleVar)
+  endShape(CLOSE);
+}
 
+function slope (){
 
-fill(200,0,90);
-beginShape();
-  vertex(scaleVar/2,scaleVar);
-  vertex((scaleVar/4)*3, scaleVar);
-  vertex(scaleVar/4,0);
-  vertex(0,0)
-endShape(CLOSE);
+  fill(200,0,90);
+  beginShape();
+    vertex(scaleVar/2,scaleVar);
+    vertex((scaleVar/4)*3, scaleVar);
+    vertex(scaleVar/4,0);
+    vertex(0,0)
+  endShape(CLOSE);
 
+}
