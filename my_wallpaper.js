@@ -1,37 +1,35 @@
   //Adjustable parameters 
 
-let scaleVar = 700   //Scale variable. Recommended 100-300, default 200.
+let scaleVar = 400   //Scale variable. Recommended 100-300, default 200.
 
 let borderSizeEntry = 95 //Controls border size. Limit between 50 and 100, default is 92
 let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
-let borderTransparencyEntry = 100 //Transparency of the border. Limit between 0 and 100, default is 55.
+
 
 let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
 let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
-let transparencySlopeAEntry = 100 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
+//let transparencySlopeA = 0 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
 
 let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
 let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
-let transparencySlopeBEntry = 100 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
+//let transparencySlopeB = 50 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
 
 
-let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
+let slopeHasHigherPriority = false //Needs to be true or false. Controls whether the slope is above or below the border line
 
 let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
 
   //Adjustable colours
 
-let slopeBColor = [117,0,104] //Colour of right side slope in RGB. Default is [117,0,104]
-let slopeAColor = [235,106,0] //Colour of left side slope in RGB. Default is [235,106,0]
-let backgroundColor = [36,0,59] //Colour of space between cubes in RGB. Default is [36,0,59]
-let backgroundSquareColor = [0,0,0] //Colour of background square in RGB. Default is [0,0,0] 
-let borderColor = [85, 4, 135] //Colour of the border in RGB. Default is [85, 4, 135]
+let slopeBColor = [117,0,104,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [235,106,0,255] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [36,0,59,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [0,0,0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [85, 4, 135,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
 
   //Conversion from 0-100 scale to 0-256 scale
 
-let borderTransparency = borderTransparencyEntry * (256/100)
-let transparencySlopeB = transparencySlopeBEntry * (256/100)
-let transparencySlopeA = transparencySlopeAEntry * (256/100)
+
 let borderSize = borderSizeEntry / 100
 
 function setup_wallpaper(pWallpaper) { // Setup code, runs once
@@ -85,7 +83,7 @@ function backgroundSquare(){ //Square behind the slopes
 
 function slopeB (){ //Right side slope
   strokeWeight(0);
-  fill(slopeBColor,transparencySlopeB); //Calls values
+  fill(slopeBColor); //Calls values
   beginShape(); //custom shape
     vertex((scaleVar/2)-rightSlopeBSize,0) //top right corner
     vertex((scaleVar/4)-leftSlopeBSize,0) //top left corner
@@ -95,7 +93,7 @@ function slopeB (){ //Right side slope
 }
 
 function slopeA (){ //Left side slope
-  fill(slopeAColor,transparencySlopeA); //Calls colour values
+  fill(slopeAColor); //Calls colour values
   beginShape(); //custom shape
     vertex((scaleVar/2)-leftSlopeASize,scaleVar);//bottom left corner
     vertex(((scaleVar/4)*3)-rightSlopeASize, scaleVar); //bottom right corner
@@ -105,7 +103,8 @@ function slopeA (){ //Left side slope
 }
 
 function border() { //Border setting
-  fill(borderColor,borderTransparency); //Calls colour values
+  fill(borderColor)
+  ; //Calls colour values
   if (sideBorder == true){ //Border on every side
     beginShape();
       vertex(scaleVar*(1-borderSize),scaleVar*(1-borderSize)); //marking inner edge, top left
