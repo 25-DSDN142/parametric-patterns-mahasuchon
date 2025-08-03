@@ -1,10 +1,23 @@
 //your parameter variables go here!
 
-let scaleVar = 200   //default 200
+let scaleVar = 200   //Scale variable. Recommended 100-300, default 200.
 
-let borderSize = 0.9 //Controls border size. Limit between 0.5 and 1.
-let sideBorder = true //Controls if there are vertical borders or not
-let rightSlopeSize = 0.8 //Control size of the right slope
+let borderSize = 0.9 //Controls border size. Limit between 0.5 and 1, default is 0.9
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+let borderTransparency100 = 40 //Transparency of the border. Limit between 0 and 100, default is 70.
+
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope. Limit depends on scale.
+let leftSlopeBSize = 0 //Adjust the left side of the right slope. Limit depends on scale.
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope. Limit depends on scale.
+let leftSlopeASize = 0 //Adjust the left side of the right slope. Limit depends on scale.
+
+
+
+
+let borderTransparency = borderTransparency100 * (256/100)
+
 // let sideBorderVal = 0 //do you want the vertical borders? DEPRECATED
 
 /*if (sideBorder = True){
@@ -13,7 +26,7 @@ let rightSlopeSize = 0.8 //Control size of the right slope
   sideBorderVal = 0;
   } */ //DEPRECATED
 
-function setup_wallpaper(pWallpaper) {
+function setup_wallpaper(pWallpaper) { // setup function
   //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
@@ -28,10 +41,12 @@ function setup_wallpaper(pWallpaper) {
   //misc settings
   rectMode(CENTER);
   ellipseMode(CENTER)
+
+
 }
 
 function wallpaper_background() {
-  background(255,255,255);  
+  background(117, 0, 104);  
 }
 
 function my_symbol() { 
@@ -39,8 +54,8 @@ function my_symbol() {
   fill(0,0,0);
   backgroundSquare()
   border();
-  slopeRight();
-  slopeLeft();
+  slopeB();
+  slopeA();
 }
 
 
@@ -69,32 +84,32 @@ function backgroundSquare(){
 }
 
 
-function slopeRight (){
+function slopeB (){
   strokeWeight(0);
   fill(0,0,155);
   color(255,255,255);
   beginShape();
-    vertex(scaleVar/2,0) //top right edge
-    vertex(scaleVar/4,0) //top left edge
-    vertex((scaleVar/4)*3,scaleVar) //bottom left edge
-    vertex(scaleVar*rightSlopeSize,scaleVar) //bottom right edge
+    vertex((scaleVar/2)-rightSlopeBSize,0) //top right corner
+    vertex((scaleVar/4)-leftSlopeBSize,0) //top left corner
+    vertex(((scaleVar/4)*3)-leftSlopeBSize,scaleVar) //bottom left corner
+    vertex(scaleVar-rightSlopeBSize,scaleVar) //bottom right corner
   endShape(CLOSE);
 }
 
-function slopeLeft (){
+function slopeA (){
 
   fill(200,0,90);
   beginShape();
-    vertex(scaleVar/2,scaleVar);
-    vertex((scaleVar/4)*3, scaleVar);
-    vertex(scaleVar/4,0);
-    vertex(0,0)
+    vertex((scaleVar/2)-leftSlopeASize,scaleVar);//bottom left corner
+    vertex(((scaleVar/4)*3)-rightSlopeASize, scaleVar); //bottom right corner
+    vertex((scaleVar/4)-rightSlopeASize,0); //top right corner
+    vertex(0-leftSlopeASize,0); //top left corner
   endShape(CLOSE);
 
 }
 
 function border() {
-  fill(10,70,200,125);
+  fill(10,70,200,borderTransparency);
   if (sideBorder == true){ //all around border
     beginShape();
       vertex(scaleVar*(1-borderSize),scaleVar*(1-borderSize)); //marking inner border
