@@ -2,10 +2,9 @@
 
 let scaleVar = 200   //default 200
 
-let temp = 1; // unused?
-let rng = 0; // unused?
-let borderSize = 0.95 //this is limited between 0 and 1
-let sideBorder = false //
+let borderSize = 0.9 //Controls border size. Limit between 0.5 and 1.
+let sideBorder = true //Controls if there are vertical borders or not
+let rightSlopeSize = 0.8 //Control size of the right slope
 // let sideBorderVal = 0 //do you want the vertical borders? DEPRECATED
 
 /*if (sideBorder = True){
@@ -35,15 +34,13 @@ function wallpaper_background() {
   background(255,255,255);  
 }
 
-
-
 function my_symbol() { 
   strokeWeight(0);
   fill(0,0,0);
   backgroundSquare()
   border();
-  blackslope();
-  slope();
+  slopeRight();
+  slopeLeft();
 }
 
 
@@ -72,19 +69,19 @@ function backgroundSquare(){
 }
 
 
-function blackslope (){
+function slopeRight (){
   strokeWeight(0);
   fill(0,0,155);
   color(255,255,255);
   beginShape();
-    vertex(scaleVar/2,0)
-    vertex(scaleVar/4,0)
-    vertex((scaleVar/4)*3,scaleVar)
-    vertex(scaleVar,scaleVar)
+    vertex(scaleVar/2,0) //top right edge
+    vertex(scaleVar/4,0) //top left edge
+    vertex((scaleVar/4)*3,scaleVar) //bottom left edge
+    vertex(scaleVar*rightSlopeSize,scaleVar) //bottom right edge
   endShape(CLOSE);
 }
 
-function slope (){
+function slopeLeft (){
 
   fill(200,0,90);
   beginShape();
