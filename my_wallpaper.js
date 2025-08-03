@@ -15,7 +15,7 @@ let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Li
 let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Limit depends on scale.
 let transparencySlopeAEntry = 100 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
 
-let slopeLayerPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
+let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
 
 let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
 
@@ -24,7 +24,11 @@ let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 
 
 //colour section!
 
-let slopeBColor = [204,48,0]
+let slopeBColor = [117,0,104] //Colour of right side slope in RGB. Default is [204,48,0]
+let slopeAColor = [235,106,0] //Colour of left side slope in RGB. Default is [235,106,0]
+let backgroundColor = [112,0,0] //Colour of space between cubes in RGB. Default is [112,0,0]
+let backgroundSquareColor = [0,0,0] //Colour of background square in RGB. Default is [0,0,0] 
+let borderColor = [245, 120, 66] 
 
 
 
@@ -50,7 +54,7 @@ let borderSize = borderSizeEntry / 100
 function setup_wallpaper(pWallpaper) { // setup function
 
 
-  //TEMPCOLOURl  = color(204, 48, 0,transparencySlopeB);
+
 
   //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -71,11 +75,11 @@ function setup_wallpaper(pWallpaper) { // setup function
 }
 
 function wallpaper_background() {
-  background(112, 0, 0);
+  background(backgroundColor);
 }
 
 function my_symbol() { 
-  if (slopeLayerPriority == true){
+  if (slopeHasHigherPriority == true){
     strokeWeight(0);
     fill(0,0,0);
     backgroundSquare()
@@ -107,11 +111,10 @@ function my_symbol() {
 
 
 function backgroundSquare(){
-  fill(0,0,0)
+  fill(backgroundSquareColor)
   if (sideBorder == true){
     rect(scaleVar/2,scaleVar/2,(scaleVar*borderSize)*backgroundSquareSize,(scaleVar*borderSize)*backgroundSquareSize); //base background
   } else{
-
     rect(scaleVar/2,(scaleVar/2),scaleVar,(scaleVar*borderSize)*backgroundSquareSize);
     
     //ect(scaleVar/2, scaleVar-(1-borderSize), scaleVar, scaleVar*borderSize)
@@ -121,7 +124,7 @@ function backgroundSquare(){
 
 function slopeB (){
   strokeWeight(0);
-  color(slopeBColor,transparencySlopeB);
+  fill(slopeBColor,transparencySlopeB);
   color(255,255,255);
   beginShape();
     vertex((scaleVar/2)-rightSlopeBSize,0) //top right corner
@@ -133,7 +136,7 @@ function slopeB (){
 
 function slopeA (){
 
-  fill(235, 106, 0,transparencySlopeA);
+  fill(slopeAColor,transparencySlopeA);
   beginShape();
     vertex((scaleVar/2)-leftSlopeASize,scaleVar);//bottom left corner
     vertex(((scaleVar/4)*3)-rightSlopeASize, scaleVar); //bottom right corner
@@ -144,7 +147,7 @@ function slopeA (){
 }
 
 function border() {
-  fill(117, 0, 104,borderTransparency);
+  fill(borderColor,borderTransparency);
 
   if (sideBorder == true){ //all around border
     beginShape();
