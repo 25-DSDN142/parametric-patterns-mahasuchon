@@ -1,10 +1,10 @@
 //your parameter variables go here!
 
 let scaleVar = 200 //default 200
-let temp = 1;
-let rng = 0;
+let temp = 1; // unused?
+let rng = 0; // unused?
 let borderSize = 0.95 //this is limited between 0 and 1
-let sideBorder = true //
+let sideBorder = false //
 // let sideBorderVal = 0 //do you want the vertical borders? DEPRECATED
 
 /*if (sideBorder = True){
@@ -34,19 +34,33 @@ function wallpaper_background() {
   background(255,255,255);  
 }
 
-function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+
+
+function my_symbol() { 
   strokeWeight(0);
   fill(0,0,0);
-  rect(scaleVar/2,scaleVar/2,scaleVar*borderSize,scaleVar*borderSize); //base background, just in case anything goes wrong
+  backgroundSquare()
+  
   blackslope();
   border();
   slope();
 }
 
+function backgroundSquare(){
+  if (sideBorder == true){
+    rect(scaleVar/2,scaleVar/2,scaleVar*borderSize,scaleVar*borderSize); //base background, just in case anything goes wrong
+  } else{
+
+    rect(scaleVar/2,scaleVar/2,scaleVar,scaleVar*borderSize);
+    
+    //ect(scaleVar/2, scaleVar-(1-borderSize), scaleVar, scaleVar*borderSize)
+  } 
+}
+
 
 function blackslope (){
   strokeWeight(0);
-  fill(0,0,255);
+  fill(0,0,155);
   color(255,255,255);
   beginShape();
     vertex(scaleVar/2,0)
@@ -70,7 +84,7 @@ function slope (){
 
 function border() {
   fill(10,70,200,125);
-  if (sideBorder == true){
+  if (1 == 1){
     beginShape();
       vertex(scaleVar*(1-borderSize),scaleVar*(1-borderSize)); //marking inner border
       vertex(scaleVar*borderSize,scaleVar*(1-borderSize));
