@@ -2,29 +2,40 @@
 
 let scaleVar = 200   //Scale variable. Recommended 100-300, default 200.
 
-let borderSize = 0.9 //Controls border size. Limit between 0.5 and 1, default is 0.9
+let borderSizeEntry = 95 //Controls border size. Limit between 50 and 100, default is 92
 let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
-let borderTransparency100 = 55 //Transparency of the border. Limit between 0 and 100, default is 55.
+let borderTransparencyEntry = 100 //Transparency of the border. Limit between 0 and 100, default is 55.
 
 
 let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Limit depends on scale.
 let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Limit depends on scale.
-let transparencySlopeB100 = 100 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
+let transparencySlopeBEntry = 100 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
 
 let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Limit depends on scale.
 let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Limit depends on scale.
-let transparencySlopeA100 = 100 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
+let transparencySlopeAEntry = 100 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
 
 let slopeLayerPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
 
-let backgroundSquareSize = .6 //Size of the background square. Limit between 0 and 1.1
+let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+//let TEMPCOLOURl;
+//color(204, 48, 0,transparencySlopeB);
+
+//colour section!
+
+let slopeBColor = [204,48,0]
 
 
 
 
-let borderTransparency = borderTransparency100 * (256/100)
-let transparencySlopeB = transparencySlopeB100 * (256/100)
-let transparencySlopeA = transparencySlopeA100 * (256/100)
+
+
+
+let borderTransparency = borderTransparencyEntry * (256/100)
+let transparencySlopeB = transparencySlopeBEntry * (256/100)
+let transparencySlopeA = transparencySlopeAEntry * (256/100)
+let borderSize = borderSizeEntry / 100
 
 // let sideBorderVal = 0 //do you want the vertical borders? DEPRECATED
 
@@ -34,7 +45,13 @@ let transparencySlopeA = transparencySlopeA100 * (256/100)
   sideBorderVal = 0;
   } */ //DEPRECATED
 
+  //COLOUR VARIABLES INSIDE OF HERE
+
 function setup_wallpaper(pWallpaper) { // setup function
+
+
+  //TEMPCOLOURl  = color(204, 48, 0,transparencySlopeB);
+
   //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
@@ -95,7 +112,7 @@ function backgroundSquare(){
     rect(scaleVar/2,scaleVar/2,(scaleVar*borderSize)*backgroundSquareSize,(scaleVar*borderSize)*backgroundSquareSize); //base background
   } else{
 
-    rect(scaleVar/2,scaleVar/2,scaleVar,scaleVar*borderSize);
+    rect(scaleVar/2,(scaleVar/2),scaleVar,(scaleVar*borderSize)*backgroundSquareSize);
     
     //ect(scaleVar/2, scaleVar-(1-borderSize), scaleVar, scaleVar*borderSize)
   } 
@@ -104,7 +121,7 @@ function backgroundSquare(){
 
 function slopeB (){
   strokeWeight(0);
-  fill(204, 48, 0,transparencySlopeB);
+  color(slopeBColor,transparencySlopeB);
   color(255,255,255);
   beginShape();
     vertex((scaleVar/2)-rightSlopeBSize,0) //top right corner
@@ -128,6 +145,7 @@ function slopeA (){
 
 function border() {
   fill(117, 0, 104,borderTransparency);
+
   if (sideBorder == true){ //all around border
     beginShape();
       vertex(scaleVar*(1-borderSize),scaleVar*(1-borderSize)); //marking inner border
