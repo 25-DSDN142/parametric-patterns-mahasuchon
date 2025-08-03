@@ -26,9 +26,9 @@ let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 
 
 let slopeBColor = [117,0,104] //Colour of right side slope in RGB. Default is [204,48,0]
 let slopeAColor = [235,106,0] //Colour of left side slope in RGB. Default is [235,106,0]
-let backgroundColor = [112,0,0] //Colour of space between cubes in RGB. Default is [112,0,0]
+let backgroundColor = [36,0,59] //Colour of space between cubes in RGB. Default is [36,0,59]
 let backgroundSquareColor = [0,0,0] //Colour of background square in RGB. Default is [0,0,0] 
-let borderColor = [245, 120, 66] 
+let borderColor = [85, 4, 135] //Colour of the border. Default is [107,0,173]
 
 
 
