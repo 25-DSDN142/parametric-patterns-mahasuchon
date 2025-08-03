@@ -1,6 +1,7 @@
 //your parameter variables go here!
 
-let scaleVar = 200 //default 200
+let scaleVar = 200   //default 200
+
 let temp = 1; // unused?
 let rng = 0; // unused?
 let borderSize = 0.95 //this is limited between 0 and 1
@@ -23,7 +24,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = scaleVar;
   pWallpaper.grid_settings.cell_height = scaleVar;
-  pWallpaper.grid_settings.row_offset  = 100;
+  pWallpaper.grid_settings.row_offset  = scaleVar/2;
 
   //misc settings
   rectMode(CENTER);
@@ -40,11 +41,24 @@ function my_symbol() {
   strokeWeight(0);
   fill(0,0,0);
   backgroundSquare()
-  
-  blackslope();
   border();
+  blackslope();
   slope();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function backgroundSquare(){
   if (sideBorder == true){
@@ -84,7 +98,7 @@ function slope (){
 
 function border() {
   fill(10,70,200,125);
-  if (1 == 1){
+  if (sideBorder == true){ //all around border
     beginShape();
       vertex(scaleVar*(1-borderSize),scaleVar*(1-borderSize)); //marking inner border
       vertex(scaleVar*borderSize,scaleVar*(1-borderSize));
@@ -98,7 +112,21 @@ function border() {
       vertex(0,0)
     endShape(CLOSE);
     } else{
-    rect(scaleVar/2, scaleVar,scaleVar,scaleVar*(1-borderSize))
+    //rect(scaleVar/2, scaleVar*borderSize,scaleVar,scaleVar*(1-borderSize))
+
+    beginShape();     //only top and bottom border
+    vertex(0,0)
+    vertex(scaleVar,0)
+    vertex(scaleVar, scaleVar*(1-borderSize))
+    vertex(0,scaleVar*(1-borderSize))
+    endShape(CLOSE);
+
+    beginShape();
+    vertex(0,scaleVar)
+    vertex(scaleVar,scaleVar)
+    vertex(scaleVar, scaleVar*borderSize)
+    vertex(0,(scaleVar*borderSize))
+    endShape(CLOSE);
     //rect(scaleVar/2, scaleVar,scaleVar,scaleVar*(1-borderSize))
   }
 }
