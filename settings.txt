@@ -9,46 +9,262 @@ Your final settings.txt will look something like this when you are finished:
 
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+  //Adjustable parameters 
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+let scaleVar = 700   //Scale variable. Recommended 100-300, default 200.
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
-}
+let borderSizeEntry = 95 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [117,0,104,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [235,106,0,255] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [36,0,59,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [0,0,0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [85, 4, 135,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+  //Adjustable parameters 
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+let scaleVar = 700   //Scale variable. Recommended 100-300, default 200.
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
-}
+let borderSizeEntry = 90 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = -140 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = -130 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = false //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.4 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [200,200,200,30] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [200,200,200,60] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [36,0,59,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [0,0,0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [85, 4, 135,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+  //Adjustable parameters 
+
+let scaleVar = 400   //Scale variable. Recommended 100-300, default 200.
+
+let borderSizeEntry = 92 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [0,0,0,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [0,0,0,255] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [60,60,60,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [0,0,0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [255,255,255,170] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+
+  //Adjustable parameters 
+
+let scaleVar = 700   //Scale variable. Recommended 100-300, default 200.
+
+let borderSizeEntry = 95 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 180 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [255,0,242,120] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [212,0,255,120] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [36,0,59,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [0,0,0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [36,0,59,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
+/////////////////////////////////
+
+Wallpaper 5: 
+
+  //Adjustable parameters 
+
+let scaleVar = 200   //Scale variable. Recommended 100-300, default 200.
+
+let borderSizeEntry = 60 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = false //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = false //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.1 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [255,72,0,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [255,191,0,255] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [117, 0, 0,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [0,0,0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [117,0,70,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
+/////////////////////////////////////
+
+Wallpaper 6:
+
+  //Adjustable parameters 
+
+let scaleVar = 400   //Scale variable. Recommended 100-300, default 200.
+
+let borderSizeEntry = 90 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = false //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [117,0,104,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [144,0, 184,120] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [36,0,59,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [7, 0, 20,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [85, 4, 135,150] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
+/////////////////////////////////////
+
+Wallpaper 7: 
+
+  //Adjustable parameters 
+
+let scaleVar = 500   //Scale variable. Recommended 100-300, default 200.
+
+let borderSizeEntry = 65 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = false //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [0, 36, 74,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [144,0, 184,120] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [36,0,59,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [7, 0, 20,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [0, 0, 0,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
+///////////////////////////////////////
+
+Wallpaper 8: 
+
+  //Adjustable parameters 
+
+let scaleVar = 500   //Scale variable. Recommended 100-300, default 200.
+
+let borderSizeEntry = 90 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = -120 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 55 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 70 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [252, 165, 3,150] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [252, 94, 3,200] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [207, 52, 0,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [110, 0, 0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [252,69,3,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+
+
+/////////////////////////////////////
+
+Wallpaper 9:
+
+  //Adjustable parameters 
+
+let scaleVar = 400   //Scale variable. Recommended 100-300, default 200.
+
+let borderSizeEntry = 90 //Controls border size. Limit between 50 and 100, default is 92
+let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
+
+let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeASize = 35 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let rightSlopeBSize = 20 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
+
+let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
+
+let backgroundSquareSize = 0.5 //Size of the background square. Limit between 0 and 1.1, default is 0.6
+
+  //Adjustable colours
+
+let slopeBColor = [135, 0, 207,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [252,69, 3,255] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [135, 0, 207,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let backgroundSquareColor = [58, 0, 74,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
+let borderColor = [252,69,3,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]

@@ -2,30 +2,26 @@
 
 let scaleVar = 400   //Scale variable. Recommended 100-300, default 200.
 
-let borderSizeEntry = 95 //Controls border size. Limit between 50 and 100, default is 92
+let borderSizeEntry = 92 //Controls border size. Limit between 50 and 100, default is 92
 let sideBorder = true //Needs to be true or false. Controls if there are vertical borders or not
-
 
 let rightSlopeASize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
 let leftSlopeASize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
-//let transparencySlopeA = 0 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
 
 let rightSlopeBSize = 0 //Adjust the right side of the right slope in pixels. Positive to move left, negative to move right, default is 0
 let leftSlopeBSize = 0 //Adjust the left side of the right slope in pixels. Positive to move left, negative to move right, default is 0
-//let transparencySlopeB = 50 //Controls transparency of the right slope. Limit between 0 and 100, default is 100.
 
-
-let slopeHasHigherPriority = false //Needs to be true or false. Controls whether the slope is above or below the border line
+let slopeHasHigherPriority = true //Needs to be true or false. Controls whether the slope is above or below the border line
 
 let backgroundSquareSize = 0.6 //Size of the background square. Limit between 0 and 1.1, default is 0.6
 
   //Adjustable colours
 
-let slopeBColor = [117,0,104,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
-let slopeAColor = [235,106,0,255] //Colour of left side slope in RGBA. Default is [235,106,0,255]
-let backgroundColor = [36,0,59,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
+let slopeBColor = [0,0,0,255] //Colour of right side slope in RGBA. Default is [117,0,104,255]
+let slopeAColor = [0,0,0,255] //Colour of left side slope in RGBA. Default is [235,106,0,255]
+let backgroundColor = [60,60,60,255] //Colour of space between cubes in RGBA. Default is [36,0,59,255]
 let backgroundSquareColor = [0,0,0,255] //Colour of background square in RGBA. Default is [0,0,0,255] 
-let borderColor = [85, 4, 135,255] //Colour of the border in RGBA. Default is [85, 4, 135,255]
+let borderColor = [255,255,255,170] //Colour of the border in RGBA. Default is [85, 4, 135,255]
 
   //Conversion from 0-100 scale to 0-256 scale
 
@@ -37,7 +33,7 @@ function setup_wallpaper(pWallpaper) { // Setup code, runs once
   pWallpaper.output_mode(GRID_WALLPAPER);
   
   //pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when ready to print
 
   //Grid settings
